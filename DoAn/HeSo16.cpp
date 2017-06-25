@@ -14,7 +14,7 @@ HeSo2 HeSo16::toBin() {
 }
 HeSo8 HeSo16::toOctal() {
 	this->convertToDec();
-	this->convertToNotDec(16);
+	this->convertToNotDec(8);
 	return *(HeSo8*)this;
 }
 HeSo10 HeSo16::toDec(){ 

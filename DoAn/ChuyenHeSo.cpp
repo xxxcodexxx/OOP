@@ -276,7 +276,7 @@ void main() {
 			cout << "\tGia tri dec 2: "; cin >> value2;
 			Dec.setVal(value1);
 			Decemal.setVal(value2);
-			Dec = (Dec - Decemal);
+			Dec = (Decemal - Dec);
 			cout << "\tKet qua: " << Dec.getVal() << endl;
 			break;
 		}
@@ -298,7 +298,7 @@ void main() {
 			cout << "\tGia tri dec 2: "; cin >> value2;
 			Dec.setVal(value1);
 			Decemal.setVal(value2);
-			Dec = (Dec / Decemal);
+			Dec = (Decemal / Dec);
 			cout << "\tKet qua: " << Dec.getVal() << endl;
 			break;
 		}
@@ -338,7 +338,7 @@ void main() {
 			cout << "\tGia tri hex 2: "; cin >> value2;
 			Hex.setVal(value1);
 			Hexa.setVal(value2);
-			Hex = (Hex - Hexa);
+			Hex = (Hexa - Hex);
 			cout << "\tKet qua: " << Hex.getVal() << endl;
 			break;
 		}
@@ -360,7 +360,7 @@ void main() {
 			cout << "\tGia tri hex 2: "; cin >> value2;
 			Hex.setVal(value1);
 			Hexa.setVal(value2);
-			Hex = (Hex / Hexa);
+			Hex = (Hexa / Hex);
 			cout << "\tKet qua: " << Hex.getVal() << endl;
 			break;
 		}
@@ -640,7 +640,7 @@ void main() {
 				cout << "\tGia tri dec 2: "; cin >> value2;
 				Dec.setVal(value1);
 				Decemal.setVal(value2);
-				Dec = (Dec - Decemal);
+				Dec = (Decemal - Dec);
 				cout << "\tKet qua: " << Dec.getVal() << endl;
 				break;
 			}
@@ -662,7 +662,7 @@ void main() {
 				cout << "\tGia tri dec 2: "; cin >> value2;
 				Dec.setVal(value1);
 				Decemal.setVal(value2);
-				Dec = (Dec / Decemal);
+				Dec = (Decemal / Dec);
 				cout << "\tKet qua: " << Dec.getVal() << endl;
 				break;
 			}
@@ -702,7 +702,7 @@ void main() {
 				cout << "\tGia tri hex 2: "; cin >> value2;
 				Hex.setVal(value1);
 				Hexa.setVal(value2);
-				Hex = (Hex - Hexa);
+				Hex = (Hexa - Hex);
 				cout << "\tKet qua: " << Hex.getVal() << endl;
 				break;
 			}
@@ -724,7 +724,7 @@ void main() {
 				cout << "\tGia tri hex 2: "; cin >> value2;
 				Hex.setVal(value1);
 				Hexa.setVal(value2);
-				Hex = (Hex / Hexa);
+				Hex = (Hexa / Hex);
 				cout << "\tKet qua: " << Hex.getVal() << endl;
 				break;
 			}
