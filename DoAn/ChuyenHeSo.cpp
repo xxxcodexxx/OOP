@@ -17,7 +17,7 @@ void main() {
 	cout << "--------Chuyen co so.--------\t\t--------Thuc hien tinh toan.----------\n\n";
 	cout << "\t1.  BIN -> OCT\n" << "\t2.  BIN -> DEC\t\t\t\t"; cout << "13.  BIN vs BIN\n"; cout << "\t3.  BIN -> HEX\n\n";
 	cout << "\t4.  OCT -> BIN\n" << "\t5.  OCT -> DEC\t\t\t\t"; cout << "14.  OCT vs OCT\n";cout << "\t6.  OCT -> HEX\n\n";
-	cout << "\t7.  OCT -> BIN\n" << "\t8.  DEC -> OCT\t\t\t\t"; cout << "15.  OCT vs OCT\n";cout << "\t9.  DEC -> HEX\n\n";
+	cout << "\t7.  DEC -> BIN\n" << "\t8.  DEC -> OCT\t\t\t\t"; cout << "15.  DEC vs DEC\n";cout << "\t9.  DEC -> HEX\n\n";
 	cout << "\t10. HEX -> BIN\n" << "\t11. HEX -> OCT\t\t\t\t"; cout << "16.  HEX vs HEX\n";cout << "\t12. HEX -> DEC\n\n";
 	do
 	{
@@ -199,6 +199,68 @@ void main() {
 		case 1: {
 			string value1;
 			string value2;
+			cout << "\tGia tri octal 1: "; cin >> value1;
+			cout << "\tGia tri octal 2: "; cin >> value2;
+			octal.setVal(value1);
+			oct.setVal(value2);
+			oct = (oct + octal);
+			cout << "\tKet qua: " << oct.getVal() << endl;
+			break;
+		}
+		case 2: {
+			string value1;
+			string value2;
+			cout << "\tGia tri octal 1: "; cin >> value1;
+			cout << "\tGia tri octal 2: "; cin >> value2;
+			octal.setVal(value1);
+			oct.setVal(value2);
+			oct = (oct - octal);
+			cout << "\tKet qua: " << oct.getVal() << endl;
+			break;
+		}
+		case 3: {
+			string value1;
+			string value2;
+			cout << "\tGia tri octal 1: "; cin >> value1;
+			cout << "\tGia tri octal 2: "; cin >> value2;
+			octal.setVal(value1);
+			oct.setVal(value2);
+			oct = (oct * octal);
+			cout << "\tKet qua: " << oct.getVal() << endl;
+			break;
+		}
+		case 4: {
+			string value1;
+			string value2;
+			cout << "\tGia tri octal 1: "; cin >> value1;
+			cout << "\tGia tri octal 2: "; cin >> value2;
+			octal.setVal(value1);
+			oct.setVal(value2);
+			oct = (oct / octal);
+			cout << "\tKet qua: " << oct.getVal() << endl;
+			break;
+		}
+		default:
+			break;
+		}
+
+		break;
+	}
+	case 15:
+	{
+		cout << "	1.  Phep cong.\t" << "2.  Phep tru.\n\n";
+		cout << "	3.  Phep nhan.\t" << "4.  Phep chia.\n\n";
+		do
+		{
+			cin.clear();
+			cout << "Nhap lua chon: "; cin >> select;
+			fflush(stdin);
+		} while (cin.fail() || select<1 || select>4);
+		switch (select)
+		{
+		case 1: {
+			string value1;
+			string value2;
 			cout << "\tGia tri dec 1: "; cin >> value1;
 			cout << "\tGia tri dec 2: "; cin >> value2;
 			Dec.setVal(value1);
@@ -238,68 +300,6 @@ void main() {
 			Decemal.setVal(value2);
 			Dec = (Dec / Decemal);
 			cout << "\tKet qua: " << Dec.getVal() << endl;
-			break;
-		}
-		default:
-			break;
-		}
-
-		break;
-	}
-	case 15:
-	{
-		cout << "	1.  Phep cong.\t" << "2.  Phep tru.\n\n";
-		cout << "	3.  Phep nhan.\t" << "4.  Phep chia.\n\n";
-		do
-		{
-			cin.clear();
-			cout << "Nhap lua chon: "; cin >> select;
-			fflush(stdin);
-		} while (cin.fail() || select<1 || select>4);
-		switch (select)
-		{
-		case 1: {
-			string value1;
-			string value2;
-			cout << "\tGia tri octal 1: "; cin >> value1;
-			cout << "\tGia tri octal 2: "; cin >> value2;
-			oct.setVal(value1);
-			octal.setVal(value2);
-			oct = (oct + octal);
-			cout << "\tKet qua: " << oct.getVal() << endl;
-			break;
-		}
-		case 2: {
-			string value1;
-			string value2;
-			cout << "\tGia tri octal 1: "; cin >> value1;
-			cout << "\tGia tri octal 2: "; cin >> value2;
-			oct.setVal(value1);
-			octal.setVal(value2);
-			oct = (oct - octal);
-			cout << "\tKet qua: " << oct.getVal() << endl;
-			break;
-		}
-		case 3: {
-			string value1;
-			string value2;
-			cout << "\tGia tri octal 1: "; cin >> value1;
-			cout << "\tGia tri octal 2: "; cin >> value2;
-			oct.setVal(value1);
-			octal.setVal(value2);
-			oct = (oct * octal);
-			cout << "\tKet qua: " << oct.getVal() << endl;
-			break;
-		}
-		case 4: {
-			string value1;
-			string value2;
-			cout << "\tGia tri octal 1: "; cin >> value1;
-			cout << "\tGia tri octal 2: "; cin >> value2;
-			oct.setVal(value1);
-			octal.setVal(value2);
-			oct = (oct / octal);
-			cout << "\tKet qua: " << oct.getVal() << endl;
 			break;
 		}
 		default:
@@ -377,11 +377,12 @@ void main() {
 	cout << "\n\nTiep tuc(Y/N): "; cin >> tryagain;
 	while (tryagain == "y" || tryagain == "Y"){
 		system("cls");
-		cout << "Chuong trinh chuyen he so 2, 8, 10, 16\t\tThuc hien tinh toan.\n\n";
-		cout << "1.  BIN -> OCT\n" << "2.  BIN -> DEC\n" << "3.  BIN -> HEX\t\t\t\t\t"; cout << "13.  BIN vs BIN\n\n";
-		cout << "4.  OCT -> BIN\n" << "5.  OCT -> DEC\n" << "6.  OCT -> HEX\t\t\t\t\t"; cout << "14.  OCT vs OCT\n\n";
-		cout << "7.  OCT -> BIN\n" << "8.  DEC -> OCT\n" << "9.  DEC -> HEX\t\t\t\t\t"; cout << "15.  OCT vs OCT\n\n";
-		cout << "10. HEX -> BIN\n" << "11. HEX -> OCT\n" << "12. HEX -> DEC\t\t\t\t\t"; cout << "16.  HEX vs HEX\n\n";
+		cout << "\t----------- Chuong trinh chuyen he so 2, 8, 10, 16 -----------\n\n";
+		cout << "--------Chuyen co so.--------\t\t--------Thuc hien tinh toan.----------\n\n";
+		cout << "\t1.  BIN -> OCT\n" << "\t2.  BIN -> DEC\t\t\t\t"; cout << "13.  BIN vs BIN\n"; cout << "\t3.  BIN -> HEX\n\n";
+		cout << "\t4.  OCT -> BIN\n" << "\t5.  OCT -> DEC\t\t\t\t"; cout << "14.  OCT vs OCT\n"; cout << "\t6.  OCT -> HEX\n\n";
+		cout << "\t7.  DEC -> BIN\n" << "\t8.  DEC -> OCT\t\t\t\t"; cout << "15.  DEC vs DEC\n"; cout << "\t9.  DEC -> HEX\n\n";
+		cout << "\t10. HEX -> BIN\n" << "\t11. HEX -> OCT\t\t\t\t"; cout << "16.  HEX vs HEX\n"; cout << "\t12. HEX -> DEC\n\n";
 		do
 		{
 			cin.clear();
@@ -562,6 +563,68 @@ void main() {
 			case 1: {
 				string value1;
 				string value2;
+				cout << "\tGia tri octal 1: "; cin >> value1;
+				cout << "\tGia tri octal 2: "; cin >> value2;
+				octal.setVal(value1);
+				oct.setVal(value2);
+				oct = (oct + octal);
+				cout << "\tKet qua: " << oct.getVal() << endl;
+				break;
+			}
+			case 2: {
+				string value1;
+				string value2;
+				cout << "\tGia tri octal 1: "; cin >> value1;
+				cout << "\tGia tri octal 2: "; cin >> value2;
+				octal.setVal(value1);
+				oct.setVal(value2);
+				oct = (oct - octal);
+				cout << "\tKet qua: " << oct.getVal() << endl;
+				break;
+			}
+			case 3: {
+				string value1;
+				string value2;
+				cout << "\tGia tri octal 1: "; cin >> value1;
+				cout << "\tGia tri octal 2: "; cin >> value2;
+				octal.setVal(value1);
+				oct.setVal(value2);
+				oct = (oct * octal);
+				cout << "\tKet qua: " << oct.getVal() << endl;
+				break;
+			}
+			case 4: {
+				string value1;
+				string value2;
+				cout << "\tGia tri octal 1: "; cin >> value1;
+				cout << "\tGia tri octal 2: "; cin >> value2;
+				octal.setVal(value1);
+				oct.setVal(value2);
+				oct = (oct / octal);
+				cout << "\tKet qua: " << oct.getVal() << endl;
+				break;
+			}
+			default:
+				break;
+			}
+
+			break;
+		}
+		case 15:
+		{
+			cout << "	1.  Phep cong.\t" << "2.  Phep tru.\n\n";
+			cout << "	3.  Phep nhan.\t" << "4.  Phep chia.\n\n";
+			do
+			{
+				cin.clear();
+				cout << "Nhap lua chon: "; cin >> select;
+				fflush(stdin);
+			} while (cin.fail() || select<1 || select>4);
+			switch (select)
+			{
+			case 1: {
+				string value1;
+				string value2;
 				cout << "\tGia tri dec 1: "; cin >> value1;
 				cout << "\tGia tri dec 2: "; cin >> value2;
 				Dec.setVal(value1);
@@ -601,68 +664,6 @@ void main() {
 				Decemal.setVal(value2);
 				Dec = (Dec / Decemal);
 				cout << "\tKet qua: " << Dec.getVal() << endl;
-				break;
-			}
-			default:
-				break;
-			}
-
-			break;
-		}
-		case 15:
-		{
-			cout << "	1.  Phep cong.\t" << "2.  Phep tru.\n\n";
-			cout << "	3.  Phep nhan.\t" << "4.  Phep chia.\n\n";
-			do
-			{
-				cin.clear();
-				cout << "Nhap lua chon: "; cin >> select;
-				fflush(stdin);
-			} while (cin.fail() || select<1 || select>4);
-			switch (select)
-			{
-			case 1: {
-				string value1;
-				string value2;
-				cout << "\tGia tri octal 1: "; cin >> value1;
-				cout << "\tGia tri octal 2: "; cin >> value2;
-				oct.setVal(value1);
-				octal.setVal(value2);
-				oct = (oct + octal);
-				cout << "\tKet qua: " << oct.getVal() << endl;
-				break;
-			}
-			case 2: {
-				string value1;
-				string value2;
-				cout << "\tGia tri octal 1: "; cin >> value1;
-				cout << "\tGia tri octal 2: "; cin >> value2;
-				oct.setVal(value1);
-				octal.setVal(value2);
-				oct = (oct - octal);
-				cout << "\tKet qua: " << oct.getVal() << endl;
-				break;
-			}
-			case 3: {
-				string value1;
-				string value2;
-				cout << "\tGia tri octal 1: "; cin >> value1;
-				cout << "\tGia tri octal 2: "; cin >> value2;
-				oct.setVal(value1);
-				octal.setVal(value2);
-				oct = (oct * octal);
-				cout << "\tKet qua: " << oct.getVal() << endl;
-				break;
-			}
-			case 4: {
-				string value1;
-				string value2;
-				cout << "\tGia tri octal 1: "; cin >> value1;
-				cout << "\tGia tri octal 2: "; cin >> value2;
-				oct.setVal(value1);
-				octal.setVal(value2);
-				oct = (oct / octal);
-				cout << "\tKet qua: " << oct.getVal() << endl;
 				break;
 			}
 			default:
